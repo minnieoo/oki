@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="/SimpleCollage/img/icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Collage</title>
+    <link rel="stylesheet" href="/SimpleCollage/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.0.7/compressor.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <script src="notify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="Details">
+            <h1>SIMPLE COLLAGE</h1>
+            <div class="inputs">
+                <input type="file" id="imageInput" multiple accept="image/*">
+                <div id="gridCustom">
+                    <!-- <label for="columns">Size</label> -->
+                    <!-- <input type="range" min="10" max="100" value="1" class="slider" id="myRange" name="size"> -->
+                    <label for="size">Columns <i class="fa-solid fa-grip-vertical"></i></label>
+                    <input type="number" id="columns" name="columns" min="0" max="100000" value="2" /> 
+                    <label for="gapSize">Gap Size (px) <i class="fa-solid fa-minimize"></i></label>
+                    <input type="number" id="gapSize" name="gapSize" min="0" max="100000" value="5" /> 
+                </div>
+
+                <!-- <div class="background-select">
+                    <label><input type="radio" name="bgColor" value="light"> Light Background</label>
+                    <label><input type="radio" name="bgColor" value="dark" checked> Dark Background</label>
+                </div> -->
+                <div class="canvas-bg-select">
+                    <label><input type="radio" name="canvasBgColor" value="transparent" checked> Transparent</label>
+                    <label><input type="radio" name="canvasBgColor" value="white"> White</label>
+                    <label><input type="radio" name="canvasBgColor" value="black"> Black</label>
+                    <input type="checkbox" id="borderRadius" name="BR"/>
+                    <label for="BR">Rounded Corners</label>                </div>
+            </div>
+
+            <div class="toggle-buttons">
+                <!-- <button id="horizontalBtn">Horizontal <i class="fa-solid fa-grip-lines"></i></button>
+                <button id="verticalBtn">Vertical <i class="fa-solid fa-grip-lines-vertical"></i></button> -->
+                <button id="reverseBtn">Reverse <i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+                <button id="clearBtn">Clear <i class="fa-solid fa-trash-can"></i></button>
+                <button id="themeBtn">Light <i class="fa-solid fa-lightbulb"></i></button>
+                <button id="hideBtn">Hide <i class="fa-solid fa-eye-slash"></i></button>
+                <button id="exportBtn">Download <i class="fa-solid fa-floppy-disk"></i></button>
+                <button id="copyBtn">Copy to Clipboard <i class="fa-solid fa-copy"></i></button>
+                <button id="helpBtn"><a href="https://minnie.untone.uk/SimpleCollage/collage-help.html" target="_blank"><i class="fa-regular fa-circle-question"></i></a></button>
+            </div>
+        </div>
+
+        <div id="imageGrid" class="horizontal"></div>
+
+
+
+
+        <p style="opacity: 40%; font-size: .7rem;" id="creds">
+            <a style="color: #8faee7;" href="https://minnie.untone.uk/" target="_blank">HOME</a> - 
+            <a style="color: #8faee7;" href="mailto:minnielovescoffee@gmail.com">Contact Me</a>
+             - This site is hosted by UNTONE. <a style="color: #8faee7;" href="https://untone.uk/personal.html">Learn more.</a>
+        </p>
+    </div>
+
+
+
+
+    <!-- Development -->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+<!-- Production -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="/SimpleCollage/script.js"></script>
+</body>
+</html>
